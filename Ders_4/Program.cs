@@ -1,14 +1,13 @@
 ﻿using System;
 
+// ********************* Ders 4 *************************
+    // Implicit Conversion (Bilinçsiz Dönüşüm)
 namespace MyNamespace
 {
     class Program
     {
         static void Main(string[] args)
         {
-// ********************* Ders 4 *************************
-            // Implicit Conversion (Bilinçsiz Dönüşüm)
-           
             byte a = 5;
             sbyte b = 30;
             short c = 10;

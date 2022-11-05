@@ -79,6 +79,44 @@ internal class Program
                     Console.WriteLine("Geçersiz ay");
                     break;
             }
+
+            switch (month)
+            {
+                case 12:
+                case 1:
+                case 2:
+                    Console.WriteLine("Kış");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    Console.WriteLine("İlkbahar");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    Console.WriteLine("Yaz");
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    Console.WriteLine("Sonbahar");
+                    break;
+                default:
+                    Console.WriteLine("Geçersiz ay");
+                    break;
+            }
+
+            string season = month switch
+            {
+                12 or 1 or 2 => "Kış",
+                3 or 4 or 5 => "İlkbahar",
+                6 or 7 or 8 => "Yaz",
+                9 or 10 or 11 => "Sonbahar",
+                _ => "Geçersiz ay"
+            };
+
+            Console.WriteLine(season);
         }
         catch (Exception ex)
         {
