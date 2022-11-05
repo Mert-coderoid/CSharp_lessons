@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+  <!-- output tipi exe  -->
+    <OutputType>Exe</OutputType>
+    <!-- dotnet versiyonu 6.0 -->
+    <TargetFramework>net6.0</TargetFramework>
+    <!-- root namespace console_programing_c# -->
+    <RootNamespace>console_programing_c_</RootNamespace>
+    <!-- ImplicitUsings mean that you don't need to add the using statements for the namespaces that are in the System namespace. -->
+    <!-- <ImplicitUsings>enable</ImplicitUsings> -->
+    <!-- Nullable mean that you don't need to add the ? to the end of the type to make it nullable. -->
+    <!-- <Nullable>enable</Nullable> -->
+  </PropertyGroup>
+
+</Project>
