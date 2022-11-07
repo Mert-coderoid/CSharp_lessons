@@ -28,12 +28,12 @@ class Solution
         {
             for (int j = 0; j < n - 1; j++)
             {
-                if (a[j] > a[j + 1])
+                if (a[j] > a[j + 1]) // Swap adjacent elements if they are in decreasing order
                 {
-                    int temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                    numberOfSwaps++;
+                    int temp = a[j]; // 3
+                    a[j] = a[j + 1]; // 2
+                    a[j + 1] = temp; // 3
+                    numberOfSwaps++; // 1
                 }
             }
             if (numberOfSwaps == 0)

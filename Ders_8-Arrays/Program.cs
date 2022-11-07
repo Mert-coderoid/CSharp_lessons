@@ -177,12 +177,6 @@ namespace MyNamespace
                         maxCount++;
                     }
                 }
-                
-                
-
-
-
-                
             }
             catch (Exception ex)
             {
