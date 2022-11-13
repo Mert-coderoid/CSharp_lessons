@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApi.DBOperations;
+using WebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 // add inmemory database
@@ -37,6 +38,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseAExceptionMiddleware();
 
 app.MapControllers();
 

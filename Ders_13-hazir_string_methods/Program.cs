@@ -379,3 +379,33 @@ namespace MyNamespace
         }
     }
 }
+
+/* 
+// Bir sınıfın diğer sınıflar tarafından türetilmesi engellenmek isteniyorsa, aşağıdaki anahtar kelimelerden hangisi kullanılmalıdır?
+
+cevap: sealed
+
+// Bir sınıfında hem normal uurucusu hem de statik kurucusu aynı anda bulunamaz." Ifadenin doğruluğunu teyit ediniz.
+
+cevap: yanlış
+
+// Aşağıdaki kavramlardan hangisini aynı isimde fakat farklı dönüş tipleri yada parametreler ile method tanımladığımızda kullanırız?
+
+cevap: method overloading
+
+// Temel sınıfın üyelerinden birinin sadece türetildiği sınıflardan erişilmesi isteniyorsa aşağıdaki erişim belirteçlerinden hangisi kullanılmalıdır?
+
+cevap: protected
+
+// Aşağıdaki tip dönüşümlerinden hangisini explicit dahi olsa gerçekleştiremeyiz?
+
+byte -> int
+string -> byte
+decimal -> float
+long -> int
+
+cevap: string -> byte
+
+// Statik sınıflarla ilgili aşağıdakilerden hangisi yanlıştır?
+
+cevap: Statik sınıfların nesneleri oluşturulamaz. */
