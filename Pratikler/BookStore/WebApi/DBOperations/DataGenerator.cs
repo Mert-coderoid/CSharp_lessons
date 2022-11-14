@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using WebApi.Entities;
 
 namespace WebApi.DBOperations
 {
@@ -16,7 +17,146 @@ namespace WebApi.DBOperations
                     return;
                 }
 
-                context.AddRange(
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Drama"
+                    },
+                    new Genre
+                    {
+                        Name = "Action"
+                    },
+                    new Genre
+                    {
+                        Name = "Science Fiction"
+                    },
+                    new Genre
+                    {
+                        Name = "Romance"
+                    },
+                    new Genre
+                    {
+                        Name = "Horror"
+                    },
+                    new Genre
+                    {
+                        Name = "Comedy"
+                    },
+                    new Genre
+                    {
+                        Name = "Thriller"
+                    },
+                    new Genre
+                    {
+                        Name = "Fantasy"
+                    },
+                    new Genre
+                    {
+                        Name = "Mystery"
+                    },
+                    new Genre
+                    {
+                        Name = "Historical"
+                    },
+                    new Genre
+                    {
+                        Name = "Biography"
+                    },
+                    new Genre
+                    {
+                        Name = "Poetry"
+                    },
+                    new Genre
+                    {
+                        Name = "Adventure"
+                    },
+                    new Genre
+                    {
+                        Name = "Self Help"
+                    },
+                    new Genre
+                    {
+                        Name = "Guide"
+                    },
+                    new Genre
+                    {
+                        Name = "Travel"
+                    },
+                    new Genre
+                    {
+                        Name = "Children's"
+                    },
+                    new Genre
+                    {
+                        Name = "Religion, Spirituality & New Age"
+                    },
+                    new Genre
+                    {
+                        Name = "Science"
+                    },
+                    new Genre
+                    {
+                        Name = "History"
+                    },
+                    new Genre
+                    {
+                        Name = "Math"
+                    },
+                    new Genre
+                    {
+                        Name = "Anthology"
+                    },
+                    new Genre
+                    {
+                        Name = "Encyclopedias"
+                    },
+                    new Genre
+                    {
+                        Name = "Dictionaries"
+                    },
+                    new Genre
+                    {
+                        Name = "Comics"
+                    },
+                    new Genre
+                    {
+                        Name = "Art"
+                    },
+                    new Genre
+                    {
+                        Name = "Cookbooks"
+                    },
+                    new Genre
+                    {
+                        Name = "Diaries"
+                    },
+                    new Genre
+                    {
+                        Name = "Journals"
+                    },
+                    new Genre
+                    {
+                        Name = "Prayer books"
+                    },
+                    new Genre
+                    {
+                        Name = "Series"
+                    },
+                    new Genre
+                    {
+                        Name = "Trilogy"
+                    },
+                    new Genre
+                    {
+                        Name = "Biographies"
+                    },
+                    new Genre
+                    {
+                        Name = "Autobiographies"
+                    }
+                );
+
+                context.Books.AddRange(
                     new Book
                     {
                         // Id = 1,

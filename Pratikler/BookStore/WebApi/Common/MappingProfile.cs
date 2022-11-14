@@ -1,8 +1,9 @@
 using AutoMapper;
-using WebApi.BookOperations.GetBookDetail;
-using WebApi.BookOperations.GetBooks;
+using WebApi.Application.BookOperations.GetBookDetail;
+using WebApi.Application.BookOperations.GetBooks;
 using WebApi.Common;
-using static WebApi.BookOperations.GetBooks.CreateBookCommand;
+using WebApi.Entities;
+using static WebApi.Application.BookOperations.GetBooks.CreateBookCommand;
 
 namespace WebApi.AddControllers
 {
