@@ -4,7 +4,7 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.BookOperations.GetBooks
+namespace WebApi.Application.BookOperations.Commands.CreeateBook
 {
     public class CreateBookCommand
     {
