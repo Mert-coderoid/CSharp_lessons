@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using WebApi.Services;
 
 namespace WebApi.Middlewares
 {
@@ -13,11 +14,14 @@ namespace WebApi.Middlewares
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<AExceptionMiddleware> _logger;
+        private readonly ILoggerService _loggerService;
 
-        public AExceptionMiddleware(RequestDelegate next, ILogger<AExceptionMiddleware> logger)
+
+        public AExceptionMiddleware(RequestDelegate next, ILogger<AExceptionMiddleware> logger, ILoggerService loggerService)
         {
             _next = next;
             _logger = logger;
+            _loggerService = loggerService;
         }
 
         public async Task Invoke(HttpContext context)
@@ -26,11 +30,11 @@ namespace WebApi.Middlewares
             try
             {
                 string message = $"Request {context.Request.Method} {context.Request.Path} {context.Request.QueryString}";
-                Console.WriteLine(message);
+                _loggerService.Write(message);
                 await _next(context);
                 watch.Stop();
                 message = $"Response {context.Request.Method} {context.Request.Path} {context.Request.QueryString} responded {context.Response.StatusCode} in {watch.ElapsedMilliseconds} ms";
-                Console.WriteLine(message);
+                _loggerService.Write(message);
             }
             catch (Exception ex)
             {
@@ -40,17 +44,17 @@ namespace WebApi.Middlewares
             }
         }
 
-        private static Task HandleExceptionAsync(HttpContext context, Exception exception, Stopwatch watch)
+        private Task HandleExceptionAsync(HttpContext context, Exception exception, Stopwatch watch)
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
             string message = $"[Error]    HTTP {context.Request.Method} {context.Request.QueryString} responded {context.Response.StatusCode} Error Message: {exception.Message} in {watch.ElapsedMilliseconds} ms";
-            Console.WriteLine(message);
-
+            // to use _loggerService to here you need to add it to the constructor 
+            // and add it to the services in Program.cs
+            _loggerService.Write(message);
 
             var result = JsonConvert.SerializeObject(new { error = exception.Message }, Formatting.Indented);
-
             return context.Response.WriteAsync(result);
         }
     }

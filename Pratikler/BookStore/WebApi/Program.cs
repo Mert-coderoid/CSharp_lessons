@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApi.DBOperations;
 using WebApi.Middlewares;
+using WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // add inmemory database
@@ -14,6 +15,9 @@ builder.Services.AddDbContext<BookStoreDBContext>(options => options.UseInMemory
 
 // add automapper
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+// add ILoggerService
+builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
