@@ -10,7 +10,7 @@ using static WebApi.Application.BookOperations.Commands.CreeateBook.CreateBookCo
 using WebApi.Application.BookOperations.Commands.CreeateBook;
 using static WebApi.Application.BookOperations.Commands.UpdateBook.UpdateBookCommand;
 
-namespace WebApi.AddControllers
+namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]s")]
@@ -40,10 +40,11 @@ namespace WebApi.AddControllers
             BookDetailViewModel result;
             GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
             query.BookId = id;
+
             GetBookDetailQueryValidation validator = new GetBookDetailQueryValidation();
             validator.ValidateAndThrow(query);
-            result = query.Handle();
 
+            result = query.Handle();
             return Ok(result);
         }
 
