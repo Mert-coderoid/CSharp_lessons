@@ -16,16 +16,16 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
         public void Handle()
         {
             var book = _dbContext.Books.SingleOrDefault(x => x.Id == BookId);
-            if(book is null)
+            if (book is null)
                 throw new InvalidOperationException("Güncellenecek Kitap bulunamadı.");
-            
+
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
             book.Title = Model.Title != default ? Model.Title : book.Title;
             book.PageCount = Model.PageCount != default ? Model.PageCount : book.PageCount;
             book.PublishDate = Model.PublishDate.Date != default ? Model.PublishDate.Date : book.PublishDate;
 
             _dbContext.SaveChanges();
-                
+
         }
         public class UpdateBookModel
         {

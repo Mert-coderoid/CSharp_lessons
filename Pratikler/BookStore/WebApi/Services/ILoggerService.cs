@@ -4,5 +4,4 @@ namespace WebApi.Services
     {
         public void Write(string message);
     }
-    
 }
